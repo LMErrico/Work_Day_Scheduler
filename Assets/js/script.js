@@ -20,10 +20,6 @@ $(function () {
     msgDiv.setAttribute("class", type);
   }
 
-  function renderLastRegistered() {
-  
-  }
-
   saveBtnEl.on('click', function() {
 
     var description = descriptionInput.value;
@@ -49,6 +45,17 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+  function renderLastRegistered() {
+    $(".time-block").each(function () {
+      
+      var timeBlock = $(this).attr("id");
+      var description = localStorage.getItem(timeBlock);
+
+      if (description) {
+        $(this).find(".description").val(description);
+      }
+    });
+  }
   //
   // TODO: Add code to display the current date in the header of the page.
 });
