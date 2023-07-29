@@ -12,6 +12,18 @@ textarea {
   padding: 10px;
 }
 
+#msg {
+  text-align: center;
+}
+
+#msg.success {
+  color: #0c71e4;
+}
+
+#msg.error {
+  color: #e6252c;
+}
+
 .description {
   white-space: pre-wrap;
 }
