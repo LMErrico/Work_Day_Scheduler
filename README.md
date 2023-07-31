@@ -14,7 +14,7 @@ N/A
 
 ## Usage
 
-The URL to the page is https://lmerrico.github.io/Code-Quiz/
+The URL to the page is https://lmerrico.github.io/Work_Day_Scheduler/
 
 Open the planner and the current day will display at the top.
 
