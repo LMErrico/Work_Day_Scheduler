@@ -18,15 +18,15 @@ The URL to the page is https://lmerrico.github.io/Work_Day_Scheduler/
 
 Open the planner and the current day will display at the top.
 
-![Alt text](assets/images/Mock-up.png)
+![Alt text](Assets/images/Mock-up.png)
 
 Get a confirm when an event is added and saved.
 
-![Alt text](<assets/images/Confirm event added.png>)
+![Alt text](<Assets/images/Confirm event added.png>)
 
 Get an alert when the time block is empty.
 
-![Alt text](<assets/images/Alert no schedule to save.png>)
+![Alt text](<Assets/images/Alert no schedule to save.png>)
 
 ## License
 
