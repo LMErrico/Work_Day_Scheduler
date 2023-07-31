@@ -14,6 +14,8 @@ $(function () {
   var msgDiv = document.querySelector('#msg');
 
   renderLastRegistered();
+  updateColors();
+  setInterval(updateColors, 3600000);
 
   function displayMessage(type, message) {
     msgDiv.textContent = message;
@@ -33,6 +35,7 @@ $(function () {
 
     localStorage.setItem(timeBlock, description);
     renderLastRegistered();
+    updateColors();
   };
 });
  
@@ -42,6 +45,23 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   
+function updateColors() {
+  var today = dayjs();
+  var currentHour = today.format('H');
+
+  $(".time-block").each(function () {
+
+  var timeBlock = parseInt($(this).attr("id"));
+
+    if (timeBlock < currentHour) {
+      $(this).addClass('past');
+    } else if (timeBlock == currentHour) {
+      $(this).addClass('present');
+    } else if (timeBlock > currentHour) {
+      $(this).addClass('future');
+    }
+  });
+};
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
@@ -56,11 +76,11 @@ $(function () {
         $(this).find(".description").val(description);
       }
     });
-  }
+  };
   
   // TODO: Add code to display the current date in the header of the page.
   var today = dayjs();
-  var currentDay = today.format('dddd, MMMM D YYYY, h:mm:ss a');
+  var currentDay = today.format('dddd, MMMM D YYYY');
 
   $('#currentDay').text(currentDay);
 
